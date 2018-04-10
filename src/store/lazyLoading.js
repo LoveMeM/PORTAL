@@ -1,0 +1,1 @@
+export default (moduleName, componentName) => () => import(`views/${moduleName}${componentName ? '/' + componentName : ''}.vue`)
