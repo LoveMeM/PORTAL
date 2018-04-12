@@ -1,17 +1,17 @@
 <template>
     <div id="welcome">
-        <div class="style-wrapper">
-            <div class="style-code" v-show="false" :html="styleCodeTag"></div>
-            <pre :html="highlightCode"></pre>
+        <div class="styles-wrap">
+            <div class="style-code" v-show="false" v-html="styleCodeTag"></div>
+            <pre v-html="highlightCode"></pre>
         </div>
-        <div class="resume-wrapper">
-            <div :html="resumeContent" v-if="enabledHTML"></div>
+        <div class="resume-wrap"  :class="{htmlMode:enabledHTML}">
+            <div v-html="resumeContent" v-if="enabledHTML"></div>
             <pre class="resume-markdown" v-else>{{ resumeContent }}</pre>
         </div>
     </div>
 </template>
 <script>
-    import { styles, resume } from '../../resource/welcome'
+    import { styles, resume } from '../../resource/welcome.js'
     import Prism from 'prismjs'
     import marked from 'marked'
     export default {
@@ -36,7 +36,14 @@
             }
         },
         mounted(){
-
+            this.showStyles(0,()=>{
+                this.showResume(()=>{
+                    this.showStyles(1,()=>{
+                        this.enabledHTML = true
+                        this.showStyles(2)
+                    })
+                })
+            })
         },
         methods:{
             showStyles(num,callback){
@@ -58,13 +65,38 @@
                         callback && callback()
                     }
                     else{
-
+                        this.goBottom('styles-wrap')
                     }
                 },this.delay)
             },
-            goBottom(){
-                
+            showResume(callback){
+                let start = 0
+                clearInterval(this.timer)
+                this.timer = setInterval(()=>{
+                    this.markdown += resume.substring(start,start + 1) || ''
+                    if(this.markdown.length === resume.length){
+                        clearInterval(this.timer)
+                        callback && callback()
+                    }
+                    else{
+                        start++
+                        this.goBottom('resume-wrap')
+                    }
+                },this.delay)
+            },
+            goBottom(className){
+                let wrapHeight = $(this.$el).find(`.${className}`).height()
+                let wrapMargin = $(this.$el).find(`.${className}`).css('padding-top').replace('px','')
+                let preHeight = $(this.$el).find(`.${className} pre`).height() + parseFloat(wrapMargin)
+                let gap = preHeight - wrapHeight
+                if(gap > 0) $(this.$el).find(`.${className}`).scrollTop(gap)
             }
         }
     }
 </script>
+<style scoped>
+    #welcome{
+        width:100%;
+        height:100%;
+    }
+</style>
