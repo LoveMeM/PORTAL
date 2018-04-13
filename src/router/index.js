@@ -7,7 +7,7 @@ export default new Router({
   mode:"history",
   routes: [
     {
-      path: '/Welcome',
+      path: '/',
       name: 'welcome',
       component: lazyLoading('welcome','welcome')
     }

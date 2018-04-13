@@ -82,9 +82,6 @@ const styles = [
     `,
     `
     /* 再对 HTML 加点样式 */
-    .resume-wrap{
-        padding: 1.5em;
-    }
     .resume-wrap h2{
         display: inline-block;
         border-bottom: 1px solid;
@@ -113,34 +110,31 @@ const styles = [
     `
 ]
 
-let resume = `王全明 Kenith.Q.Wang
+let resume = `王全明(Kenith.Q.Wang)
 ----
 
-一只迷途的前端小码农，徜徉在计算机的世界，渴望成为一名有点点厉害的全栈开发工程师
+一只迷途的前端小码农，在前端的世界里慢慢的摸索，渴望成为一名有丢丢厉害的前端工程师
 
 技能
 ----
 
-* 前端开发
-* nodejs
-* php
-* python
+* ES6、Angular 2、TypeScript、Vue、CSS3、Webpack Etc
+* C#、SqlServer、WCF
+* NPM、Git
+* 
 
 工作经历
 ----
 
-1. 阿里巴巴天猫集团实习
-2. 沪江网前端开发工程师
-3. 美团点评前端开发工程师
-4. ...
+1. 任我行软件
+2. 新蛋科技(成都)有限责任公司
 
 链接
 ----
 
-* [GitHub](https://github.com/qianlongo)
-* [我的文章](https://qianlongo.github.io/)
+* [GitHub](https://github.com/LoveMeM)
 
-> 如果你喜欢这个效果，Fork [我的项目](https://github.com/qianlongo/resume-native)，打造你自己的简历！
+> 如果你喜欢这个效果，Fork [我的项目](https://github.com/LoveMeM/PORTAL)
 
 `
 
