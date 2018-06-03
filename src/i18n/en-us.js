@@ -1,7 +1,7 @@
 module.exports = {
     common: {
         signIn:"Sign in",
-        signOut:"Sign up"
+        signUp:"Sign up"
     },
     navbar: {
         feedBack: "Feedback"

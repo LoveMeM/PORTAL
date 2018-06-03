@@ -12,8 +12,8 @@
             </div>
             <div class="userInfo">
                 <img :src="currentUser.HeadPortrait" alt="No Found" />
-                <a href="javascript:void(0)" class="color-white font-bold margin-left-10">{{ $t('common.signIn') }}</a> Or 
-                <a href="javascript:void(0)" class="color-white font-bold">{{ $t('common.signOut') }}</a>
+                <a href="javascript:void(0)" @click="signIn" class="color-white font-bold margin-left-10">{{ $t('common.signIn') }}</a> Or 
+                <a href="javascript:void(0)" @click="signUp" class="color-white font-bold">{{ $t('common.signUp') }}</a>
                 <ul v-if="currentUser.isRegister"></ul>
             </div>
         </div>
@@ -41,6 +41,12 @@ export default {
     changeLang(lang) {
       this.language = lang.value;
       this.$i18n.locale = lang.key;
+    },
+    signIn() {
+      this.$router.push({ name: "login" });
+    },
+    signUp() {
+      this.$router.push({ name: "register" });
     }
   }
 };
@@ -87,7 +93,7 @@ export default {
 .navigation .pageInfo .language ul {
   list-style-type: none;
   position: absolute;
-  width: 30%;
+  width: 25%;
   background: #fff;
   color: black;
   border-radius: 0 0 5px 5px;
