@@ -1,0 +1,14 @@
+const UPDATE_USER = "UPDATE_USER"
+
+const SET_PARAMS = "SET_PARAMS"
+
+const CLEAR_PARAMS = "CLEAR_PARAMS"
+
+const ADD_WISH = "ADD_WISH"
+
+export {
+    UPDATE_USER,
+    SET_PARAMS,
+    CLEAR_PARAMS,
+    ADD_WISH
+}

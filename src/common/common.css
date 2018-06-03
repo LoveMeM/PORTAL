@@ -1,0 +1,52 @@
+ /* common */
+ * {
+     margin: 0;
+     padding: 0;
+     font-family: 'Segoe UI Web (West European)',Segoe UI,'Microsoft YaHei',-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+ }
+ a{
+     text-decoration-line: none;
+ }
+ /* color */
+ .color-white{
+     color: white;
+ }
+ /* width */
+.with-r-100{
+    width: 100%;
+}
+.height-h-100{
+    height: 100%;
+}
+/* font */
+.font-bold{
+    font-weight: bold;
+}
+.trim{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+/* margin */
+.margin-left-5{
+    margin-left: 5px;
+}
+.margin-left-10{
+    margin-left: 10px;
+}
+/* position */
+
+/* display */
+
+.display-inline{
+    display: inline;
+}
+.display-block{
+    display: block;
+}
+
+.display-inline-block{
+    display: inline-block;
+}
+
